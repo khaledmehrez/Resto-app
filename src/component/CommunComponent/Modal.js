@@ -18,11 +18,7 @@ class ModalExampleDimmer extends Component {
         <Modal dimmer={dimmer} open={open} onClose={this.close}>
           <Modal.Header>Select a Photo</Modal.Header>
           <Modal.Content image>
-            <Image
-              wrapped
-              size='medium'
-              src='/images/avatar/large/rachel.png'
-            />
+            
             <Modal.Description>
               <Header>Default Profile Image</Header>
               {this.props.SampleFood}

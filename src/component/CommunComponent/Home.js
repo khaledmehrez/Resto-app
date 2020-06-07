@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { getDataForGuestAPi } from "../../action";
-
+import { getDataForburgerAPi,getDataForpizzaAPi } from "../../action";
+import CardFoodList from "./card.js"
 import React, { Component } from "react";
 import "./Home.css";
 
@@ -9,10 +9,14 @@ import Homeimg2 from "./img/SecondSectionHome.jpg";
 import ModalExampleDimmer from "./Modal";
 class Home extends Component {
   componentDidMount() {
-    this.props.getDataForGuest();
+    this.props.getDataForburger();
+    this.props.getDataForpizza()
+    
   }
   render() {
-    const { food } = this.props;
+    
+    const { burgers,pizzas } = this.props;
+    
     return (
       <div>
         <div className="cover-home">
@@ -30,10 +34,10 @@ class Home extends Component {
               tellus. Quisque quis mi lacus.{" "}
             </p>
             <ModalExampleDimmer
-              SampleFood={
-                <div>
-                  {food.map((el) => (
-                    <img src={require(`${el.burger}`)} />
+               SampleFood={
+                <div class="burger-sampleHome">
+                  {burgers.map((el) => (
+                    <CardFoodList Cardfood={el.burger}/>
                   ))}
                 </div>
               }
@@ -50,9 +54,9 @@ class Home extends Component {
           </p>
           <ModalExampleDimmer
               SampleFood={
-                <div>
-                  {food.map((el) => (
-                    <img src={require(`${el.pizza}`)} />
+                <div class="pizza-sampleHome">
+                  {pizzas.map((el) => (
+                    <CardFoodList Cardfood={el.pizza}/>
                   ))}
                 </div>
               }
@@ -63,11 +67,14 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  console.log(state);
-  return { food: state.food };
-};
+const mapStateToProps = (state) => ({
+  
+   burgers: state.burgers,
+   pizzas:state.pizzas,
+});
 const mapDispatchToProps = (dispatch) => ({
-  getDataForGuest: () => dispatch(getDataForGuestAPi()),
+  getDataForburger: () => dispatch(getDataForburgerAPi()),
+  getDataForpizza: ()=> dispatch(getDataForpizzaAPi()),
+ 
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

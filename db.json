@@ -1,13 +1,52 @@
 {
-    "posts": [
-       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda1" },
-       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda2" },
-       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda3" },
-       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda4" }
-     
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "burgers": [
+    {
+      "burger": "./img/burger.jpeg"
+    },
+    {
+      "burger": "./img/burger.jpeg"
+    },
+    {
+      "burger": "./img/burger.jpeg"
+    },
+    {
+      "burger": "./img/burger.jpeg"
+    }
+  ],
+  "pizzas": [
+    {
+      "pizza": "./img/SecondSectionHome.jpg"
+    },
+    {
+      "pizza": "./img/SecondSectionHome.jpg"
+    },
+    {
+      "pizza": "./img/SecondSectionHome.jpg"
+    },
+    {
+      "pizza": "./img/SecondSectionHome.jpg"
+    }
+  ],
+  "sodas": [
+    {
+      "burger": "./img/burger.jpeg",
+      "pizza": "./img/FirstSectionHome.jpg",
+      "soda": "soda1"
+    },
+    {
+      "burger": "./img/burger.jpeg",
+      "pizza": "./img/FirstSectionHome.jpg",
+      "soda": "soda2"
+    },
+    {
+      "burger": "./img/burger.jpg",
+      "pizza": "./img/FirstSectionHome.jpg",
+      "soda": "soda3"
+    },
+    {
+      "burger": "./img/burger.jpg",
+      "pizza": "./img/FirstSectionHome.jpg",
+      "soda": "soda4"
+    }
+  ]
+}

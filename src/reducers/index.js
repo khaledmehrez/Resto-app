@@ -1,12 +1,20 @@
 import { combineReducers } from "redux";
 
 const initialstate=[]
-
-const foodList=(state=initialstate,action)=>{
-    if(action.type==="api"){
-return action.payload
+//reducer for burger data
+const burgerList=(state=initialstate,action)=>{
+  
+    if(action.type==="Burger"){
+    return action.payload
     }
     else return state
+}
+// reducer for pizza data
+const pizzaList=(state=initialstate,action)=>{
+  if(action.type==="Pizza"){
+return action.payload
+  }
+  else return state
 }
 
 
@@ -15,5 +23,6 @@ return action.payload
 
 
 export default combineReducers({
-  food:foodList
+  burgers:burgerList,
+  pizzas:pizzaList
 });

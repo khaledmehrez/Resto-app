@@ -38,3 +38,11 @@
     width:20%;
     height:50%;
 }
+.burger-sampleHome{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.pizza-sampleHome{
+    display: grid;
+    grid-template-columns: auto auto;
+}

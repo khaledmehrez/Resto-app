@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
-import { getDataForGuestAPi} from "../../action"
+// import React, { Component } from 'react';
+// import { getDataForburgerAPi} from "../../action"
 
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
-class FoodList extends Component {
+// class FoodList extends Component {
   
-  componentDidMount(){
-    this.props.getDataForGuest();
-  }
-    render() {
-      const {food} =this.props
+//   componentDidMount(){
+//     this.props.getDataForburger();
+//   }
+//     render() {
+//       const {food} =this.props
       
-      console.log(food.burger)
+//       console.log(food.burger)
       
      
-        return (
-            <div>
-               {food.map(el=> <img src={require(`${el.burger}`)} />)}
+//         return (
+//             <div>
+//                {food.map(el=> <img src={require(`${el.burger}`)} />)}
                
-            </div>
-        );
-    }
-}
-const mapStateToProps=(state)=>{
+//             </div>
+//         );
+//     }
+// }
+// const mapStateToProps=(state)=>{
 
-return {food:state.food}
-}
-const mapDispatchToProps = (dispatch) =>({
-getDataForGuest:()=> dispatch(getDataForGuestAPi())
-})
-export default connect(mapStateToProps,mapDispatchToProps)(FoodList);
+// return {food:state.food}
+// }
+// const mapDispatchToProps = (dispatch) =>({
+// getDataForGuest:()=> dispatch(getDataForburgerAPi())
+// })
+// export default connect(mapStateToProps,mapDispatchToProps)(FoodList);
