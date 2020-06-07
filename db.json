@@ -1,0 +1,13 @@
+{
+    "posts": [
+       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda1" },
+       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda2" },
+       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda3" },
+       { "burger": "./img/burger.jpg", "pizza": "./img/FirstSectionHome.jpg", "soda": "soda4" }
+     
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }

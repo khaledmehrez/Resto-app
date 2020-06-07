@@ -1,0 +1,40 @@
+.cover-home{
+    background-image: url(../CommunComponent/img/CoverHome.jpg);
+    height:80vh;
+    background-size: cover;
+   margin-top: 10%;
+   
+}
+
+.cover-title-home{
+    color:red
+
+}
+.first-section-home{
+    display: flex;
+    justify-content:space-between;
+    margin-top:20%;
+    
+}
+.Home-img1{
+    width:60%;
+    margin-left:5%;
+    
+}
+.Home-paragraphe1{
+    width:50%;
+   
+}
+.second-section-home{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:20%;
+}
+.Home-img2{
+    width:50%;
+    height:50%;
+}
+.Home-paragraphe2{
+    width:20%;
+    height:50%;
+}
