@@ -1,15 +1,21 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addOrderAPi  } from "../../action";
+class CardFoodList extends Component { 
 
-class CardFoodList extends Component {
-  render() {console.log(this.props.Cardfood)
+  AddToOrder=(i)=>{
+    this.props.addOrder(this.props.food)
+  }
+  render() {console.log(this.props.food)
+    const food=this.props.food
     return (
       <div>
         <div class="ui card">
           <div class="image">
-          <img src={require(`${this.props.Cardfood}`)}/>
+          <img src={require(`${food.picture}`)}/>
           </div>
           <div class="content">
-            <div class="header">Matthew</div>
+            <div class="header">{food.name}</div>
             <div class="meta">
               <span class="date">Joined in 2015</span>
             </div>
@@ -18,15 +24,22 @@ class CardFoodList extends Component {
             </div>
           </div>
           <div class="extra content">
-            <a>
-              <i aria-hidden="true" class="user icon"></i>
-              22 Friends
-            </a>
+          {(this.props.loadLayout===2)?<button class="ui green basic button" onClick={() => this.AddToOrder(food.id)}>Green</button>:null}
           </div>
         </div>
       </div>
     );
   }
 }
+const mapStateToProps = (state) => ({
+  
+  foods: state.foods,
+  
+});
+const mapDispatchToProps = (dispatch) => ({
+ addOrder: (order) => dispatch(addOrderAPi(order)),
+ 
 
-export default CardFoodList;
+});
+export default connect(mapStateToProps, mapDispatchToProps)(CardFoodList);
+

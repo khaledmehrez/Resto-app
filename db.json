@@ -1,52 +1,57 @@
 {
-  "burgers": [
+  "foods": [
     {
-      "burger": "./img/burger.jpeg"
+      "id": 1,
+      "name": "burger1",
+      "picture": "./img/burger.jpeg",
+      "type": "burger"
     },
     {
-      "burger": "./img/burger.jpeg"
+      "id": 2,
+      "name": "burger2",
+      "picture": "./img/burger.jpeg",
+      "type": "burger"
     },
     {
-      "burger": "./img/burger.jpeg"
+      "id": 3,
+      "name": "burger3",
+      "picture": "./img/burger.jpeg",
+      "type": "burger"
     },
     {
-      "burger": "./img/burger.jpeg"
+      "id": 4,
+      "name": "burger4",
+      "picture": "./img/burger.jpeg",
+      "type": "burger"
+    },
+    {
+      "id": 5,
+      "name": "pizza1",
+      "picture": "./img/SecondSectionHome.jpg",
+      "type": "pizza"
+    },
+    {
+      "id": 6,
+      "name": "pizza2",
+      "picture": "./img/SecondSectionHome.jpg",
+      "type": "pizza"
+    },
+    {
+      "id": 7,
+      "name": "pizza3",
+      "picture": "./img/SecondSectionHome.jpg",
+      "type": "pizza"
+    },
+    {
+      "id": 8,
+      "name": "pizza4",
+      "picture": "./img/SecondSectionHome.jpg",
+      "type": "pizza"
     }
   ],
-  "pizzas": [
+  "orders": [
     {
-      "pizza": "./img/SecondSectionHome.jpg"
-    },
-    {
-      "pizza": "./img/SecondSectionHome.jpg"
-    },
-    {
-      "pizza": "./img/SecondSectionHome.jpg"
-    },
-    {
-      "pizza": "./img/SecondSectionHome.jpg"
-    }
-  ],
-  "sodas": [
-    {
-      "burger": "./img/burger.jpeg",
-      "pizza": "./img/FirstSectionHome.jpg",
-      "soda": "soda1"
-    },
-    {
-      "burger": "./img/burger.jpeg",
-      "pizza": "./img/FirstSectionHome.jpg",
-      "soda": "soda2"
-    },
-    {
-      "burger": "./img/burger.jpg",
-      "pizza": "./img/FirstSectionHome.jpg",
-      "soda": "soda3"
-    },
-    {
-      "burger": "./img/burger.jpg",
-      "pizza": "./img/FirstSectionHome.jpg",
-      "soda": "soda4"
+      "id": 3
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getDataForburgerAPi,getDataForpizzaAPi } from "../../action";
+import { getDataForfoodAPi } from "../../action";
 import CardFoodList from "./card.js"
 import React, { Component } from "react";
 import "./Home.css";
@@ -9,14 +9,14 @@ import Homeimg2 from "./img/SecondSectionHome.jpg";
 import ModalExampleDimmer from "./Modal";
 class Home extends Component {
   componentDidMount() {
-    this.props.getDataForburger();
-    this.props.getDataForpizza()
+    this.props.getDataForfood();
+    
     
   }
   render() {
     
-    const { burgers,pizzas } = this.props;
-    
+    const { foods } = this.props;
+    console.log(foods)
     return (
       <div>
         <div className="cover-home">
@@ -36,8 +36,8 @@ class Home extends Component {
             <ModalExampleDimmer
                SampleFood={
                 <div class="burger-sampleHome">
-                  {burgers.map((el) => (
-                    <CardFoodList Cardfood={el.burger}/>
+                  {foods.filter(el=>el.type==="burger").map((el) => (
+                    <CardFoodList food={el}  loadLayout={this.props.loadLayout}/>
                   ))}
                 </div>
               }
@@ -55,8 +55,8 @@ class Home extends Component {
           <ModalExampleDimmer
               SampleFood={
                 <div class="pizza-sampleHome">
-                  {pizzas.map((el) => (
-                    <CardFoodList Cardfood={el.pizza}/>
+                  {foods.filter(el=>el.type==="pizza").map((el) => (
+                    <CardFoodList food={el}  loadLayout={this.props.loadLayout}/>
                   ))}
                 </div>
               }
@@ -69,12 +69,12 @@ class Home extends Component {
 }
 const mapStateToProps = (state) => ({
   
-   burgers: state.burgers,
-   pizzas:state.pizzas,
+   foods: state.foods,
+   
 });
 const mapDispatchToProps = (dispatch) => ({
-  getDataForburger: () => dispatch(getDataForburgerAPi()),
-  getDataForpizza: ()=> dispatch(getDataForpizzaAPi()),
+  getDataForfood: () => dispatch(getDataForfoodAPi()),
+  
  
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

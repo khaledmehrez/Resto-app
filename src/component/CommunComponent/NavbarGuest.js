@@ -5,9 +5,12 @@ class NavbarGuest extends Component {
     return (
       <div>
         <div className="ui menu">
-          <a href="a" className="item" >Home</a>
-          <a href="a" className="item" href="">Food-List</a>
-          <a href="a" className="item" href="">Upcoming Events</a>
+          {this.props.links}
+          <div className="sign">
+            {this.props.sign}
+          </div>
+          
+          
         </div>
       </div>
     );
