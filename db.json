@@ -1,57 +1,30 @@
 {
   "foods": [
     {
-      "id": 1,
-      "name": "burger1",
-      "picture": "./img/burger.jpeg",
-      "type": "burger"
-    },
-    {
-      "id": 2,
-      "name": "burger2",
-      "picture": "./img/burger.jpeg",
-      "type": "burger"
-    },
-    {
-      "id": 3,
-      "name": "burger3",
-      "picture": "./img/burger.jpeg",
-      "type": "burger"
-    },
-    {
-      "id": 4,
-      "name": "burger4",
-      "picture": "./img/burger.jpeg",
-      "type": "burger"
-    },
-    {
-      "id": 5,
-      "name": "pizza1",
-      "picture": "./img/SecondSectionHome.jpg",
-      "type": "pizza"
-    },
-    {
       "id": 6,
       "name": "pizza2",
-      "picture": "./img/SecondSectionHome.jpg",
-      "type": "pizza"
-    },
-    {
-      "id": 7,
-      "name": "pizza3",
-      "picture": "./img/SecondSectionHome.jpg",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
       "type": "pizza"
     },
     {
       "id": 8,
       "name": "pizza4",
-      "picture": "./img/SecondSectionHome.jpg",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
       "type": "pizza"
+    },
+    {
+      "name": "qqqf",
+      "id": 9
+    },
+    {
+      "thefood": {
+        "name": "sfsf",
+        "picture": "fzfz",
+        "price": "fzfz",
+        "type": "fzf"
+      },
+      "id": 10
     }
   ],
-  "orders": [
-    {
-      "id": 3
-    }
-  ]
+  "orders": []
 }

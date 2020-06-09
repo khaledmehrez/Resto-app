@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {deleteOrderAPi,editOrderAPi} from "../../action";
+import {deleteOrderAPi} from "../../api/api";
 class Ordercard extends Component {
     state={isEdit:false}
     deleteOrder=(i)=>{
@@ -18,7 +18,7 @@ class Ordercard extends Component {
       <div>
         <div class="ui card">
           <div class="image">
-          <img src={require(`${orderfood.picture}`)}/>
+          <img src={orderfood.picture}/>
           </div>
           <div class="content">
             <div class="header">{orderfood.name}</div>
@@ -45,7 +45,7 @@ class Ordercard extends Component {
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
     deleteorder:(orderTOdelete)=>dispatch(deleteOrderAPi(orderTOdelete)),
-    editorder:(orderTOedit)=>dispatch(editOrderAPi(orderTOedit)),
+    
 
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Ordercard);

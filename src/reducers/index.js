@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const initialstate=[]
-//reducer for burger data
+//reducer to get food data
 const foodList=(state=initialstate,action)=>{
   
     if(action.type==="food"){
@@ -11,14 +11,6 @@ const foodList=(state=initialstate,action)=>{
 }
 
 
-//reducer for addOrder
-
-const orderList=(state=initialstate,action)=>{
-  if(action.type==="Order"){
-return action.payload
-  }
-  else return state
-}
 
 //reducer to get order api
 const getOrderList=(state=initialstate,action)=>{
@@ -33,7 +25,7 @@ const getOrderList=(state=initialstate,action)=>{
 
 export default combineReducers({
   foods:foodList,
-  orders:orderList,
+  
   getorders:getOrderList,
   
 });

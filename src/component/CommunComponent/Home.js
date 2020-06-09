@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getDataForfoodAPi } from "../../action";
+import { getDataForfoodAPi } from "../../api/api";
 import CardFoodList from "./card.js"
 import React, { Component } from "react";
 import "./Home.css";
@@ -7,6 +7,7 @@ import "./Home.css";
 import Homeimg1 from "./img/FirstSectionHome.jpg";
 import Homeimg2 from "./img/SecondSectionHome.jpg";
 import ModalExampleDimmer from "./Modal";
+import Addfood from "../layoutadmin/Addfile";
 class Home extends Component {
   componentDidMount() {
     this.props.getDataForfood();
@@ -63,7 +64,9 @@ class Home extends Component {
             />
           <img className="Home-img2" src={Homeimg2} alt="img1" />
         </div>
+        {(this.props.loadLayout===3)?<Addfood />:null}
       </div>
+
     );
   }
 }

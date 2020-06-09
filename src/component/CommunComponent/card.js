@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addOrderAPi  } from "../../action";
+import { addOrderAPi,deletefoodAPi  } from "../../api/api";
+
 class CardFoodList extends Component { 
 
   AddToOrder=(i)=>{
     this.props.addOrder(this.props.food)
+  }
+  EditfoodList=(i)=>{
+    console.log(i)
+    window.location.reload();
+  }
+  DeleteFoodList=(i)=>{
+    this.props.deletefood(i)
+    window.location.reload();
   }
   render() {console.log(this.props.food)
     const food=this.props.food
@@ -12,7 +21,7 @@ class CardFoodList extends Component {
       <div>
         <div class="ui card">
           <div class="image">
-          <img src={require(`${food.picture}`)}/>
+          <img src={food.picture}/>
           </div>
           <div class="content">
             <div class="header">{food.name}</div>
@@ -24,7 +33,9 @@ class CardFoodList extends Component {
             </div>
           </div>
           <div class="extra content">
-          {(this.props.loadLayout===2)?<button class="ui green basic button" onClick={() => this.AddToOrder(food.id)}>Green</button>:null}
+          {(this.props.loadLayout===2)?<button class="ui green basic button" onClick={() => this.AddToOrder(food.id)}>add to cart</button>:null}
+          {(this.props.loadLayout===3)?<button class="ui green basic button" onClick={() => this.EditfoodList(food.id)}>edit</button>:null}
+          {(this.props.loadLayout===3)?<button class="ui red basic button" onClick={() => this.DeleteFoodList(food.id)}>X</button>:null}
           </div>
         </div>
       </div>
@@ -38,6 +49,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
  addOrder: (order) => dispatch(addOrderAPi(order)),
+ deletefood:(foodTOdelete)=>dispatch(deletefoodAPi(foodTOdelete)),
  
 
 });
