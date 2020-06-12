@@ -11,15 +11,23 @@ export function getDataForfoodAPi(){
     const p=order.picture
     const t=order.type
     const n=order.name
+    const price=order.price
+    const qte=order.qte+1
+    const id=order.id
     return(dispatch)=>
-    axios.post('http://localhost:4000/orders',{picture:p,type:t,name:n}).then((res)=>(console.log(res.data)))
+    axios.post('http://localhost:4000/orders',{picture:p,type:t,name:n,price,qte,id}).then((res)=>(console.log(res.data)))
   }
-  //fet order frrom api
+  //fetch order from api
   export function getOrderAPi(){
     return(dispatch)=>
     axios.get('http://localhost:4000/orders').then((res)=>dispatch(getorder(res.data)));
     }
-
+//edit order
+export function EDitOrderQte(OrderQteToEdit){
+  
+  return(dispatch)=>
+  axios.put(`http://localhost:4000/orders/${OrderQteToEdit}`).then((res)=>(console.log(res.data)))
+}
 
 //delete order
 
@@ -28,6 +36,26 @@ export function deleteOrderAPi(orderTOdelete){
   
   return(dispatch)=>
   axios.delete(`http://localhost:4000/orders/${orderTOdelete}`).then((res)=>(console.log(res.data)))
+}
+
+
+//remove item qte
+export function removeItemQteApi(i,data){
+  
+  return(dispatch)=>
+  axios.patch(`http://localhost:4000/orders/${i}`,{qte:data}).then((res)=>(console.log(res.data)))
+}
+//add itemqte
+export function addItemQteApi(i,data){
+  
+  return(dispatch)=>
+  axios.patch(`http://localhost:4000/orders/${i}`,{qte:data}).then((res)=>(console.log(res.data)))
+}
+// show and hide add to cart and go to cart
+export function ShowAndHideApi(i,data){
+  
+  return(dispatch)=>
+  axios.patch(`http://localhost:4000/FOODS/${i}`,{etat:data}).then((res)=>(console.log(res.data)))
 }
 //admin
 //delete from food list

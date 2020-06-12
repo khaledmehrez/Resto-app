@@ -8,9 +8,10 @@ class AppGuest extends Component {
     
     
     render() {
+        
         return (
             <div>
-            <NavbarGuest links={navGuestData} sign={<div ><SignIn />
+            <NavbarGuest links={navGuestData} sign={<div ><SignIn loadLayout={this.props.loadLayout}/>
                                                                                   <SignUp />
                                                                                   </div>}/>
             <Home />

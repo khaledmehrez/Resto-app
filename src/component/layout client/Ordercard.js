@@ -1,19 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {deleteOrderAPi} from "../../api/api";
+import {deleteOrderAPi,removeItemQteApi,addItemQteApi,ShowAndHideApi} from "../../api/api";
 class Ordercard extends Component {
-    state={isEdit:false}
+    
     deleteOrder=(i)=>{
        this.props.deleteorder(i)
        window.location.reload();
+       this.props.showBtn(i,false)
     }
     editOrder=(i)=>{
         this.props.editorder(i)
         console.log(i)
         this.setState({isEdit:true})
     }
+    removeqte=(i)=>{
+
+      this.props.removeqte(i,this.props.orderfood.qte-1)
+
+      window.location.reload()
+
+
+    }
+    addqte=(i)=>{
+
+      this.props.removeqte(i,this.props.orderfood.qte+1)
+      window.location.reload()
+    }
   render() {
       const orderfood=this.props.orderfood
+      
     return (
       <div>
         <div class="ui card">
@@ -26,17 +41,25 @@ class Ordercard extends Component {
               <span class="date">Joined in 2015</span>
             </div>
             <div class="description">
-              Matthew is a musician living in Nashville.
+              price: {orderfood.price}
             </div>
           </div>
           <div class="extra content">
           <button class="ui red inverted button" onClick={() => this.deleteOrder(orderfood.id)}>X</button>
           <button class="ui green inverted button" onClick={() => this.editOrder(orderfood.id)}>Edit</button>
 
-          {(this.state.isEdit)?<div class="ui input"><input type="text" placeholder="Search..." />
-          <button class="ui green inverted button" >Green</button></div>:null}
+          
           
           </div>
+          <div class="extra content">
+          <button class="ui  icon button" onClick={()=>this.removeqte(orderfood.id)}>-</button>
+          <div class="ui mini input"><input type="text"  value={orderfood.qte} /></div>
+          <button class="ui icon button" onClick={()=>this.addqte(orderfood.id)} >+</button>
+          </div>
+        <div className="extra content">
+          coast:{orderfood.price*orderfood.qte}
+        </div>
+
         </div>
       </div>
     );
@@ -45,6 +68,9 @@ class Ordercard extends Component {
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
     deleteorder:(orderTOdelete)=>dispatch(deleteOrderAPi(orderTOdelete)),
+    removeqte:(i,x)=>dispatch(removeItemQteApi(i,x)),
+    additem: (i,x)=>dispatch(addItemQteApi(i,x)),
+    showBtn:(i,data)=>dispatch(ShowAndHideApi(i,data))
     
 
 });

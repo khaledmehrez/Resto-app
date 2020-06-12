@@ -1,30 +1,40 @@
 {
   "foods": [
     {
-      "id": 6,
-      "name": "pizza2",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
-      "type": "pizza"
+      "id": 3,
+      "name": "burger3",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
+      "price": 25,
+      "type": "burger",
+      "qte": 0,
+      "etat": false
     },
     {
-      "id": 8,
-      "name": "pizza4",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
-      "type": "pizza"
+      "id": 4,
+      "name": "burger4",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
+      "price": 25,
+      "type": "burger",
+      "qte": 0,
+      "etat": false
     },
     {
-      "name": "qqqf",
-      "id": 9
-    },
-    {
-      "thefood": {
-        "name": "sfsf",
-        "picture": "fzfz",
-        "price": "fzfz",
-        "type": "fzf"
-      },
-      "id": 10
+      "id": 5,
+      "name": "burger5",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
+      "price": 25,
+      "type": "burger",
+      "qte": 0,
+      "etat": false
     }
   ],
-  "orders": []
+  "orders": [],
+  "users": [
+    {
+      "id": "1",
+      "acompte": "admin",
+      "firestname": "admin",
+      "lastname": "admin"
+    }
+  ]
 }

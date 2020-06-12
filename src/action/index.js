@@ -24,6 +24,11 @@ export const getorder = (payload) => ({
 
 });
 
+// change layout
+export const changelayout = (payload) => ({
+  
+  type:"layout",
+  payload:payload,
 
-
+});
 

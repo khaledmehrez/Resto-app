@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getDataForfoodAPi } from "../../api/api";
+import { getDataForfoodAPi,getOrderAPi } from "../../api/api";
 import CardFoodList from "./card.js"
 import React, { Component } from "react";
 import "./Home.css";
@@ -11,13 +11,14 @@ import Addfood from "../layoutadmin/Addfile";
 class Home extends Component {
   componentDidMount() {
     this.props.getDataForfood();
-    
+    this.props.getdataorder();
     
   }
   render() {
     
-    const { foods } = this.props;
-    console.log(foods)
+    const { foods,getorders } = this.props;
+    
+    
     return (
       <div>
         <div className="cover-home">
@@ -37,8 +38,8 @@ class Home extends Component {
             <ModalExampleDimmer
                SampleFood={
                 <div class="burger-sampleHome">
-                  {foods.filter(el=>el.type==="burger").map((el) => (
-                    <CardFoodList food={el}  loadLayout={this.props.loadLayout}/>
+                  {foods.filter(el=>el.type==="burger").map((el,i) => (
+                    <CardFoodList food={el} getorder={getorders}   loadLayout={this.props.loadLayout}/>
                   ))}
                 </div>
               }
@@ -73,11 +74,13 @@ class Home extends Component {
 const mapStateToProps = (state) => ({
   
    foods: state.foods,
+   getorders: state.getorders,
+   
    
 });
 const mapDispatchToProps = (dispatch) => ({
   getDataForfood: () => dispatch(getDataForfoodAPi()),
-  
+  getdataorder:()=> dispatch(getOrderAPi())
  
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

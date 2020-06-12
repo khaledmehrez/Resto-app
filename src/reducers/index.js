@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 const initialstate=[]
+const load=1
 //reducer to get food data
 const foodList=(state=initialstate,action)=>{
   
@@ -21,11 +22,19 @@ const getOrderList=(state=initialstate,action)=>{
   else return state
 }
 
-
+// chnage layout
+const changeLayoutlist=(state=load,action)=>{
+  
+  if(action.type==="layout"){
+  return action.payload
+  }
+  else return state
+}
 
 export default combineReducers({
   foods:foodList,
   
   getorders:getOrderList,
+  layouts:changeLayoutlist,
   
 });

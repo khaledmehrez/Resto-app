@@ -7,5 +7,5 @@ export const navdataLink = (
     </>
 );
 export const navdataSign=(
-  <div ><button class="ui red inverted button">Logout</button></div>
+  <div ><button class="ui red inverted button" >Logout</button></div>
 )
