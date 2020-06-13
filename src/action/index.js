@@ -29,6 +29,7 @@ export const changelayout = (payload) => ({
   
   type:"layout",
   payload:payload,
+  
 
 });
 

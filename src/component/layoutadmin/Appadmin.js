@@ -7,7 +7,7 @@ class Appadmin extends Component {
     render() {
         return (
             <div>
-             <NavbarGuest links={navdataLink} sign={navdataSign} />
+             <NavbarGuest links={navdataLink} loadLayout={this.props.loadLayout} />
              <Switch>
              <Route
             path="/home-user"

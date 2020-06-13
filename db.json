@@ -1,22 +1,14 @@
 {
   "foods": [
     {
-      "id": 3,
-      "name": "burger3",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
-      "price": 25,
-      "type": "burger",
-      "qte": 0,
-      "etat": false
-    },
-    {
       "id": 4,
       "name": "burger4",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
       "price": 25,
       "type": "burger",
       "qte": 0,
-      "etat": false
+      "etat": false,
+      "usermail": "none"
     },
     {
       "id": 5,
@@ -25,16 +17,54 @@
       "price": 25,
       "type": "burger",
       "qte": 0,
-      "etat": false
+      "etat": false,
+      "usermail": "none"
     }
   ],
   "orders": [],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "acompte": "admin",
       "firestname": "admin",
-      "lastname": "admin"
+      "lastname": "admin",
+      "mail": "admin@admin.com",
+      "password": "topadmin"
+    },
+    {
+      "id": 2,
+      "acompte": "user",
+      "firestname": "user2",
+      "lastname": "user2",
+      "mail": "user@user.comm",
+      "password": "topuser"
+    },
+    {
+      "id": 3,
+      "acompte": "user3",
+      "firestname": "user3",
+      "lastname": "user",
+      "mail": "user@user.comm",
+      "password": "topuser"
+    },
+    {
+      "id": 4,
+      "acompte": "user",
+      "firestname": "user4",
+      "lastname": "user4",
+      "mail": "user@user.comm",
+      "password": "topuser"
+    },
+    {
+      "id": 5,
+      "acompte": "user",
+      "firestname": "user5",
+      "lastname": "user5",
+      "mail": "user@user.comm",
+      "password": "topuser"
     }
-  ]
+  ],
+  "layout": {
+    "layoutnumber": 1
+  }
 }

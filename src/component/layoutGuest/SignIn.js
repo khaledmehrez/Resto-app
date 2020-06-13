@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Header, Image, Modal } from "semantic-ui-react";
 import { Component } from "react";
 import { connect } from "react-redux";
-import {changelayout} from "../../action"
+import {chooseLayoutApi} from "../../api/api"
 class SignIn extends Component{
   handlechange=(e)=>{
     this.setState({[e.target.name]:e.target.value})
@@ -11,16 +11,17 @@ class SignIn extends Component{
   }
   submiting=()=>{
     if(this.state.mail==="admin.com" && this.state.password==="topadmin"){
-      this.props.change(3)
+      this.props.choose(3)
+      window.location.reload()
     }
-    else if(this.state.mail==="client.com" && this.state.password==="topclient"){
-      this.props.change(2)
+    else if(this.state.mail==="client@client.com" && this.state.password==="topclient"){
+      this.props.choose(2)
+      window.location.reload()
     }
     
   }
   render(){
-    const {layouts}=this.props;
-    console.log(layouts)
+    
     
 
   return (
@@ -57,11 +58,11 @@ class SignIn extends Component{
 };
 const mapStateToProps = (state) => ({
   
-  layouts:state.layouts
+  
   
 });
 const mapDispatchToProps = (dispatch) => ({
- change: (n) => dispatch(changelayout(n)),
+ choose: (data) => dispatch(chooseLayoutApi(data)),
  
  
 

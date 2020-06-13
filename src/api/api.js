@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {getDataForfood,getorder} from "../action"
+import {getDataForfood,getorder,changelayout} from "../action"
 //get foodlist from api
 
 export function getDataForfoodAPi(){
@@ -70,3 +70,19 @@ export function addfoodlistAPi(thefood){
   return(dispatch)=>
   axios.post('http://localhost:4000/foods',{thefood}).then((res)=>(console.log(res.data)))
 }
+
+//layout
+//get layout api
+
+export function getlayoutAPi(){
+  return(dispatch)=>
+  axios.get('http://localhost:4000/layout').then((res)=>dispatch(changelayout(res.data)));
+  }
+
+  //choose layout
+
+  export function chooseLayoutApi(data){
+  
+    return(dispatch)=>
+    axios.patch(`http://localhost:4000/layout`,{layoutnumber:data}).then((res)=>(console.log(res.data)))
+  }
