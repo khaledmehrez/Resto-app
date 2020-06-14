@@ -1,44 +1,67 @@
 {
   "foods": [
     {
-      "id": 4,
-      "name": "burger4",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
-      "price": "80",
+      "id": 1,
+      "name": "cheese",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
+      "price": "15",
       "type": "burger",
       "qte": 0,
-      "etat": true,
+      "etat": false,
+      "usermail": "none"
+    },
+    {
+      "id": 2,
+      "name": "Chiken burger",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/McD-Classic-Grilled-Chicken-Sand.jpg/1024px-McD-Classic-Grilled-Chicken-Sand.jpg",
+      "price": 11,
+      "type": "burger",
+      "qte": 0,
+      "etat": false,
+      "usermail": "none"
+    },
+    {
+      "id": 3,
+      "name": "Beef burger",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/NCI_Visuals_Food_Hamburger.jpg/1024px-NCI_Visuals_Food_Hamburger.jpg",
+      "price": 12,
+      "type": "burger",
+      "qte": 0,
+      "etat": false,
+      "usermail": "none"
+    },
+    {
+      "id": 4,
+      "name": "Turkey Burgers ",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
+      "price": 8,
+      "type": "burger",
+      "qte": 0,
+      "etat": false,
       "usermail": "none"
     },
     {
       "id": 5,
-      "name": "burger5",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
-      "price": 25,
-      "type": "burger",
+      "name": "Pizza Margherita",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+      "price": 5,
+      "type": "pizza",
       "qte": 0,
-      "etat": true,
+      "etat": false,
+      "usermail": "none"
+    },
+    {
+      "id": 6,
+      "name": "Pizza Paperonni",
+      "picture": "https://media.gettyimages.com/photos/cheesy-pepperoni-pizza-picture-id938742222?s=2048x2048",
+      "price": 8,
+      "type": "pizza",
+      "qte": 0,
+      "etat": false,
       "usermail": "none"
     }
   ],
-  "orders": [
-    {
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
-      "type": "burger",
-      "name": "burger4",
-      "price": "80",
-      "qte": 1,
-      "id": 4
-    },
-    {
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1024px-RedDot_Burger.jpg",
-      "type": "burger",
-      "name": "burger5",
-      "price": 25,
-      "qte": 1,
-      "id": 5
-    }
-  ],
+  "orders": [],
   "users": [
     {
       "id": 1,
@@ -74,16 +97,21 @@
     }
   ],
   "layout": {
-    "layoutnumber": 2
+    "layoutnumber": 1
   },
   "curentsessions": [
     {
-      "id": 1,
-      "acompte": "user1",
-      "firestname": "user1",
-      "lastname": "user1",
-      "mail": "user1@user.com",
-      "password": "topuser"
+      "data": [
+        {
+          "id": 3,
+          "acompte": "user3",
+          "firestname": "user3",
+          "lastname": "user3",
+          "mail": "user3@user.com",
+          "password": "topuser"
+        }
+      ],
+      "id": 1
     }
   ]
 }

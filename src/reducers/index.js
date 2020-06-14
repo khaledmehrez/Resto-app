@@ -38,6 +38,14 @@ const getUserList=(state=initialstate,action)=>{
   }
   else return state
 }
+//get user session
+const getusersessionList=(state=initialstate,action)=>{
+  
+  if(action.type==="user-session"){
+  return action.payload
+  }
+  else return state
+}
 
 export default combineReducers({
   foods:foodList,
@@ -45,5 +53,5 @@ export default combineReducers({
   getorders:getOrderList,
   layouts:changeLayoutlist,
   getusers:getUserList,
-  
+  usersession:getusersessionList,
 });

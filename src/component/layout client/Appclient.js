@@ -6,6 +6,7 @@ import Order from "./Order";
 
 import { Route, Switch } from "react-router-dom";
 class Appclient extends Component {
+  
   render() {
     return (
       <div>
@@ -15,7 +16,8 @@ class Appclient extends Component {
             path="/home-user"
             component={() => <Home loadLayout={this.props.loadLayout} />}
           />
-          <Route path="/Order" component={Order} />
+          <Route path="/Order"
+           component={Order} />
         </Switch>
       </div>
     );
@@ -23,3 +25,4 @@ class Appclient extends Component {
 }
 
 export default Appclient;
+

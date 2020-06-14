@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./NavbarGuest.css"
 import { connect } from "react-redux";
 import {chooseLayoutApi} from "../../api/api"
+import Addfood from "../layoutadmin/Addfile"
 class NavbarGuest extends Component {
   resetLayout=()=>{
     this.props.choose(1)
@@ -15,6 +16,7 @@ class NavbarGuest extends Component {
           {this.props.links}
           <div className="sign">
             {this.props.sign}
+            {(this.props.loadLayout===3)?<Addfood />:null}
             {(this.props.loadLayout>1)?<button
             class="ui red inverted button"
             onClick={this.resetLayout}

@@ -24,7 +24,7 @@ class SignIn extends Component{
       window.location.reload()
     }
     else 
-    return alert('bhim')
+    return alert('error ')
   }
   render(){
     const {getusers}=this.props;

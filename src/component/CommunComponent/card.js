@@ -56,9 +56,8 @@ class CardFoodList extends Component {
 
 
   render() {
-    const { food, getorder } = this.props;
-    console.log(this.state.price);
-    console.log(this.state.name);
+    const { food, getorder,usersession } = this.props;
+    console.log(this.props.loadLayout)
     return (
       <div>
         <div class="ui card">
@@ -67,7 +66,7 @@ class CardFoodList extends Component {
           </div>
           <div class="content">
             <div class="header">
-              {(this.state.editname===false && this.props.loadLayout===3)?(
+              {(this.props.loadLayout===3)?(this.state.editname===false )?(
                 <span>
                  {this.state.namefromApi}
                  <button
@@ -76,8 +75,9 @@ class CardFoodList extends Component {
                   >
                     <i aria-hidden="true" class="edit icon"></i>
                   </button>
-                
-                <div class="ui icon input">
+                </span>)
+                :
+                (<div class="ui icon input">
                   <input
                     type="text"
 
@@ -91,25 +91,25 @@ class CardFoodList extends Component {
                   >
                     <i aria-hidden="true" class="edit icon"></i>
                   </button>
-                </div>
-                </span>
-              ):food.name}
+                </div>)
+               
+              :food.name}
               </div>
                 
             
             <div class="content">
-              {(this.state.editprice === false && this.props.loadLayout===3) ? (
+              {(this.props.loadLayout===3)?(this.state.editprice === false  ) ? (
                 <span>
-                  Price:{this.state.pricefromApi}
+                  Price:{this.state.pricefromApi} dt
                   <button
                     class="ui icon button"
                     onClick={this.togglepriceTotrue}
                   >
                     <i aria-hidden="true" class="edit icon"></i>
                   </button>
-                
-               
-                <div class="ui icon input">
+                </span>)
+               :
+                (<div class="ui icon input">
                   <input
                     type="text"
 
@@ -124,8 +124,8 @@ class CardFoodList extends Component {
                     <i aria-hidden="true" class="edit icon"></i>
                   </button>
                 </div>
-                </span>
-              ):<p>price:{food.price}</p>}
+                
+              ):<p>{food.price} dt</p> }
             </div>
           </div>
           <div class="extra content">
@@ -142,10 +142,11 @@ class CardFoodList extends Component {
             ) : null}
             {this.props.loadLayout === 2 && this.state.togle === true ? (
               <Link to="/order" class="ui green basic button">
+                <i aria-hidden="true" class="cart icon"></i>
                 go to cart
               </Link>
             ) : null}
-            {this.props.loadLayout === 3 ? (
+            {this.props.loadLayout === 1 ? (
               <button
                 class="ui green basic button"
                 onClick={() => this.EditfoodList(food.id)}

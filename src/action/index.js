@@ -40,3 +40,11 @@ export const getuser = (payload) => ({
   payload:payload,
 
 });
+//get user session
+export const getusersession = (payload) => ({
+  
+  type:"user-session",
+  payload:payload,
+  
+
+});

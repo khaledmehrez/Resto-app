@@ -1,5 +1,5 @@
 .cover-home{
-    background-image: url(../CommunComponent/img/CoverHome.jpg);
+    background-image: url(../CommunComponent/img/coverHome.jpg);
     height:80vh;
     background-size: cover;
    margin-top: 10%;
@@ -12,31 +12,38 @@
 }
 .first-section-home{
     display: flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     margin-top:20%;
     
+    background-color: rgb(225,182,41);
 }
 .Home-img1{
-    width:60%;
-    margin-left:5%;
+    
+    
+    
     
 }
 .Home-paragraphe1{
-    width:50%;
+    width:40%;
+    
+    margin-top:5%;
    
 }
 .second-section-home{
     display: flex;
     justify-content: space-evenly;
     margin-top:20%;
+    background-color: rgb(233,179,138);
+    
+    padding:2%;
 }
 .Home-img2{
-    width:50%;
-    height:50%;
+    
 }
 .Home-paragraphe2{
-    width:20%;
-    height:50%;
+    width:40%;
+    margin-top:10%;
+   
 }
 .burger-sampleHome{
     display: grid;

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {getDataForfood,getorder,changelayout,getuser} from "../action"
+import {getDataForfood,getorder,changelayout,getuser,getusersession} from "../action"
 //get foodlist from api
 
 export function getDataForfoodAPi(){
@@ -14,6 +14,7 @@ export function getDataForfoodAPi(){
     const price=order.price
     const qte=order.qte+1
     const id=order.id
+    
     return(dispatch)=>
     axios.post('http://localhost:4000/orders',{picture:p,type:t,name:n,price,qte,id}).then((res)=>(console.log(res.data)))
   }
@@ -68,7 +69,7 @@ export function deletefoodAPi(foodTOdelete){
 export function addfoodlistAPi(thefood){
   
   return(dispatch)=>
-  axios.post('http://localhost:4000/foods',{thefood}).then((res)=>(console.log(res.data)))
+  axios.post('http://localhost:4000/foods',{name:thefood.name,picture:thefood.picture,price:thefood.price,type:thefood.type,qte:0,etat:false}).then((res)=>(console.log(res.data)))
 }
 //edit food list
 //edit name
@@ -104,9 +105,16 @@ export function getlayoutAPi(){
     return(dispatch)=>
     axios.get('http://localhost:4000/users').then((res)=>dispatch(getuser(res.data)));
     }
-    //get user session
+    //put user session
     export function addSessionToApi(data){
   
       return(dispatch)=>
-      axios.put(`http://localhost:4000/curentsessions`,{data}).then((res)=>(console.log(res.data)))
+      axios.put(`http://localhost:4000/curentsessions/1`,{data}).then((res)=>(console.log(res.data)))
     }
+    //get user session
+    export function getUsersessionAPi(){
+      return(dispatch)=>
+      axios.get(`http://localhost:4000/curentsessions/1`).then((res)=>dispatch(getusersession(res.data)));
+      }
+    
+ 

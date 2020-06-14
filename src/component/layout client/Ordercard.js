@@ -14,10 +14,11 @@ class Ordercard extends Component {
         this.setState({isEdit:true})
     }
     removeqte=(i)=>{
-
+     if(this.props.orderfood.qte>1){
       this.props.removeqte(i,this.props.orderfood.qte-1)
-
       window.location.reload()
+     }
+      
 
 
     }
@@ -41,7 +42,7 @@ class Ordercard extends Component {
               <span class="date">Joined in 2015</span>
             </div>
             <div class="description">
-              price: {orderfood.price}
+              price: {orderfood.price} dt
             </div>
           </div>
           <div class="extra content">
@@ -56,8 +57,8 @@ class Ordercard extends Component {
           <div class="ui mini input"><input type="text"  value={orderfood.qte} /></div>
           <button class="ui icon button" onClick={()=>this.addqte(orderfood.id)} >+</button>
           </div>
-        <div className="extra content">
-          coast:{orderfood.price*orderfood.qte}
+        <div className=" content">
+          coast:{orderfood.price*orderfood.qte} dt
         </div>
 
         </div>

@@ -1,24 +1,29 @@
 import { connect } from "react-redux";
-import { getDataForfoodAPi,getOrderAPi } from "../../api/api";
+import { getDataForfoodAPi,getOrderAPi,getUsersessionAPi } from "../../api/api";
 import CardFoodList from "./card.js"
 import React, { Component } from "react";
 import "./Home.css";
 
 import Homeimg1 from "./img/FirstSectionHome.jpg";
 import Homeimg2 from "./img/SecondSectionHome.jpg";
+import Homeimg3 from "./img/homepage3.jpg";
+import Homeimg4 from "./img/homepage4.jpg";
+import Homeimg5 from "./img/homepage5.jpg";
+import Homeimg6 from "./img/homepage6.jpg";
 import ModalExampleDimmer from "./Modal";
 import Addfood from "../layoutadmin/Addfile";
 class Home extends Component {
   componentDidMount() {
     this.props.getDataForfood();
     this.props.getdataorder();
+    this.props.getusersession();
     
   }
   render() {
     
-    const { foods,getorders } = this.props;
+    const { foods,getorders,usersession } = this.props;
     
-    
+   
     return (
       <div>
         <div className="cover-home">
@@ -26,9 +31,16 @@ class Home extends Component {
         </div>
 
         <div className=" first-section-home ">
-          <img className="Home-img1" src={Homeimg1} alt="img1" />
-          <div>
-            <p className="Home-paragraphe1">
+        <div class="ui fade reveal">
+        <div class="ui visible content">
+          <img className="Home-img1" src={Homeimg4} alt="img1"  />
+          </div>
+          <div class="ui hidden content">
+    <img src={Homeimg3}   />
+  </div>
+</div>
+          <div className="Home-paragraphe1">
+            <p >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
               lectus tellus, varius eu orci id, porttitor vulputate sem. Fusce
               sapien quam, dignissim sed rhoncus commodo, porttitor non ex.
@@ -39,7 +51,7 @@ class Home extends Component {
                SampleFood={
                 <div class="burger-sampleHome">
                   {foods.filter(el=>el.type==="burger").map((el,i) => (
-                    <CardFoodList food={el} getorder={getorders}   loadLayout={this.props.loadLayout}/>
+                    <CardFoodList food={el} getorder={getorders} usersession={usersession}  loadLayout={this.props.loadLayout}/>
                   ))}
                 </div>
               }
@@ -47,7 +59,8 @@ class Home extends Component {
           </div>
         </div>
         <div className="second-section-home">
-          <p className="Home-paragraphe2">
+          <div className="Home-paragraphe2">
+          <p >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             lectus tellus, varius eu orci id, porttitor vulputate sem. Fusce
             sapien quam, dignissim sed rhoncus commodo, porttitor non ex.
@@ -58,14 +71,22 @@ class Home extends Component {
               SampleFood={
                 <div class="pizza-sampleHome">
                   {foods.filter(el=>el.type==="pizza").map((el) => (
-                    <CardFoodList food={el}  loadLayout={this.props.loadLayout}/>
+                    <CardFoodList food={el} usersession={usersession} loadLayout={this.props.loadLayout}/>
                   ))}
                 </div>
               }
             />
-          <img className="Home-img2" src={Homeimg2} alt="img1" />
+            </div>
+            <div class="ui fade reveal">
+            <div class="ui visible content">
+          <img className="Home-img2" src={Homeimg6} alt="img1" />
+          </div>
+          <div class="ui hidden content">
+    <img src={Homeimg5}   />
+  </div>
+</div>
         </div>
-        {(this.props.loadLayout===3)?<Addfood />:null}
+        
       </div>
 
     );
@@ -75,12 +96,12 @@ const mapStateToProps = (state) => ({
   
    foods: state.foods,
    getorders: state.getorders,
-   
+   usersession:state.usersession,
    
 });
 const mapDispatchToProps = (dispatch) => ({
   getDataForfood: () => dispatch(getDataForfoodAPi()),
-  getdataorder:()=> dispatch(getOrderAPi())
- 
+  getdataorder:()=> dispatch(getOrderAPi()),
+ getusersession:()=>dispatch(getUsersessionAPi())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
