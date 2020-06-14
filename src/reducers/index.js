@@ -30,11 +30,20 @@ const changeLayoutlist=(state=load,action)=>{
   }
   else return state
 }
+//get user
+const getUserList=(state=initialstate,action)=>{
+  
+  if(action.type==="Getuser"){
+  return action.payload
+  }
+  else return state
+}
 
 export default combineReducers({
   foods:foodList,
   
   getorders:getOrderList,
   layouts:changeLayoutlist,
+  getusers:getUserList,
   
 });

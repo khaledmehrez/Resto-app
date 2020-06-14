@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {getDataForfood,getorder,changelayout} from "../action"
+import {getDataForfood,getorder,changelayout,getuser} from "../action"
 //get foodlist from api
 
 export function getDataForfoodAPi(){
@@ -26,7 +26,7 @@ export function getDataForfoodAPi(){
 export function EDitOrderQte(OrderQteToEdit){
   
   return(dispatch)=>
-  axios.put(`http://localhost:4000/orders/${OrderQteToEdit}`).then((res)=>(console.log(res.data)))
+  axios.patch(`http://localhost:4000/orders/${OrderQteToEdit}`).then((res)=>(console.log(res.data)))
 }
 
 //delete order
@@ -70,7 +70,19 @@ export function addfoodlistAPi(thefood){
   return(dispatch)=>
   axios.post('http://localhost:4000/foods',{thefood}).then((res)=>(console.log(res.data)))
 }
-
+//edit food list
+//edit name
+export function editnameApi(i,data){
+  
+  return(dispatch)=>
+  axios.patch(`http://localhost:4000/foods/${i}`,{name:data}).then((res)=>(console.log(res.data)))
+}
+//edit price
+export function editpriceApi(i,data){
+  
+  return(dispatch)=>
+  axios.patch(`http://localhost:4000/foods/${i}`,{price:data}).then((res)=>(console.log(res.data)))
+}
 //layout
 //get layout api
 
@@ -86,3 +98,15 @@ export function getlayoutAPi(){
     return(dispatch)=>
     axios.patch(`http://localhost:4000/layout`,{layoutnumber:data}).then((res)=>(console.log(res.data)))
   }
+  //users
+  // get users
+  export function getUserAPi(){
+    return(dispatch)=>
+    axios.get('http://localhost:4000/users').then((res)=>dispatch(getuser(res.data)));
+    }
+    //get user session
+    export function addSessionToApi(data){
+  
+      return(dispatch)=>
+      axios.put(`http://localhost:4000/curentsessions`,{data}).then((res)=>(console.log(res.data)))
+    }

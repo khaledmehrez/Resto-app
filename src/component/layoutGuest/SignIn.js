@@ -2,26 +2,32 @@ import React from "react";
 import { Button, Header, Image, Modal } from "semantic-ui-react";
 import { Component } from "react";
 import { connect } from "react-redux";
-import {chooseLayoutApi} from "../../api/api"
+import {chooseLayoutApi,getUserAPi,addSessionToApi} from "../../api/api"
 class SignIn extends Component{
+  componentDidMount(){
+    this.props.getuser()
+  }
   handlechange=(e)=>{
     this.setState({[e.target.name]:e.target.value})
 
 
   }
   submiting=()=>{
-    if(this.state.mail==="admin.com" && this.state.password==="topadmin"){
+    if(this.state.mail==="admin@admin.com" && this.state.password==="topadmin"){
       this.props.choose(3)
       window.location.reload()
     }
-    else if(this.state.mail==="client@client.com" && this.state.password==="topclient"){
+    else if(this.props.getusers.filter(el=>el.mail===this.state.mail).length!==0 && this.props.getusers.filter(el=>el.password===this.state.password).length!==0){
+      let arruser=this.props.getusers.filter(el=>el.mail===this.state.mail)
+      this.props.addsession(arruser)
       this.props.choose(2)
       window.location.reload()
     }
-    
+    else 
+    return alert('bhim')
   }
   render(){
-    
+    const {getusers}=this.props;
     
 
   return (
@@ -57,14 +63,14 @@ class SignIn extends Component{
   };
 };
 const mapStateToProps = (state) => ({
-  
+  getusers:state.getusers,
   
   
 });
 const mapDispatchToProps = (dispatch) => ({
  choose: (data) => dispatch(chooseLayoutApi(data)),
- 
- 
+ getuser:()=>dispatch(getUserAPi()),
+ addsession:(data)=>dispatch(addSessionToApi(data))
 
 });
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

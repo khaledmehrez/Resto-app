@@ -32,4 +32,11 @@ export const changelayout = (payload) => ({
   
 
 });
+//users
 
+export const getuser = (payload) => ({
+  
+  type:"Getuser",
+  payload:payload,
+
+});
