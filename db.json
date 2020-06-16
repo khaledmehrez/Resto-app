@@ -2,7 +2,7 @@
   "foods": [
     {
       "id": 1,
-      "name": "cheese burger",
+      "name": "Cheese burger",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
       "price": "15",
       "type": "burger",
@@ -72,7 +72,7 @@
       "etat": true,
       "usermail": "none",
       "user1": "user1",
-      "user1qte": 2
+      "user1qte": 1
     },
     {
       "id": 2,
@@ -124,7 +124,9 @@
       "etat": true,
       "usermail": "none",
       "user4": "user4",
-      "user4qte": 4
+      "user4qte": 4,
+      "user1": "user1",
+      "user1qte": 1
     },
     {
       "id": 6,
@@ -136,7 +138,9 @@
       "etat": true,
       "usermail": "none",
       "user4": "user4",
-      "user4qte": 2
+      "user4qte": 2,
+      "user1": "user1",
+      "user1qte": 1
     }
   ],
   "users": [
@@ -174,15 +178,15 @@
     }
   ],
   "layout": {
-    "layoutnumber": 2
+    "layoutnumber": 1
   },
   "curentsessions": [
     {
       "id": 1,
-      "acompte": "user1",
-      "firestname": "user1",
-      "lastname": "user1",
-      "mail": "user1@user.com",
+      "acompte": "user2",
+      "firestname": "user2",
+      "lastname": "user2",
+      "mail": "user2@user.com",
       "password": "topuser"
     }
   ]
