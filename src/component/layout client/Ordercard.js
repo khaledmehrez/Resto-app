@@ -4,7 +4,7 @@ import {deleteOrderAPi,removeItemQteApi,addItemQteApi,ShowAndHideApi} from "../.
 class Ordercard extends Component {
     
     deleteOrder=(i)=>{
-       this.props.deleteorder(i)
+       this.props.deleteorder(i,this.props.b)
        window.location.reload();
        this.props.showBtn(i,false)
     }
@@ -14,22 +14,25 @@ class Ordercard extends Component {
         this.setState({isEdit:true})
     }
     removeqte=(i)=>{
-     if(this.props.orderfood.qte>1){
-      this.props.removeqte(i,this.props.orderfood.qte-1)
+      if(this.props.orderfood[this.props.b+"qte"]>1){
+      this.props.removeqte(i,this.props.orderfood[this.props.b+"qte"]-1,this.props.b)
       window.location.reload()
-     }
+      }
+      
+     
       
 
 
     }
     addqte=(i)=>{
-
-      this.props.removeqte(i,this.props.orderfood.qte+1)
+     
+      this.props.removeqte(i,this.props.orderfood[this.props.b+"qte"]+1,this.props.b)
       window.location.reload()
+     
     }
   render() {
       const orderfood=this.props.orderfood
-      
+      const userquntity=this.props.b+"qte"
     return (
       <div>
         <div class="ui card">
@@ -54,11 +57,11 @@ class Ordercard extends Component {
           </div>
           <div class="extra content">
           <button class="ui  icon button" onClick={()=>this.removeqte(orderfood.id)}>-</button>
-          <div class="ui mini input"><input type="text"  value={orderfood.qte} /></div>
+          <div class="ui mini input"><input type="text"  value={orderfood[this.props.b+"qte"]} /></div>
           <button class="ui icon button" onClick={()=>this.addqte(orderfood.id)} >+</button>
           </div>
         <div className=" content">
-          coast:{orderfood.price*orderfood.qte} dt
+          coast:{orderfood.price*orderfood[this.props.b+"qte"]} dt
         </div>
 
         </div>
@@ -68,8 +71,8 @@ class Ordercard extends Component {
 }
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
-    deleteorder:(orderTOdelete)=>dispatch(deleteOrderAPi(orderTOdelete)),
-    removeqte:(i,x)=>dispatch(removeItemQteApi(i,x)),
+    deleteorder:(orderTOdelete,key)=>dispatch(deleteOrderAPi(orderTOdelete,key)),
+    removeqte:(i,x,dynamicvariable)=>dispatch(removeItemQteApi(i,x,dynamicvariable)),
     additem: (i,x)=>dispatch(addItemQteApi(i,x)),
     showBtn:(i,data)=>dispatch(ShowAndHideApi(i,data))
     

@@ -22,7 +22,7 @@ class Home extends Component {
   render() {
     
     const { foods,getorders,usersession } = this.props;
-    
+    console.log(usersession)
    
     return (
       <div>

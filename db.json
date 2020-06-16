@@ -2,12 +2,12 @@
   "foods": [
     {
       "id": 1,
-      "name": "cheese",
+      "name": "cheese burger",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
       "price": "15",
       "type": "burger",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     },
     {
@@ -17,7 +17,7 @@
       "price": 11,
       "type": "burger",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     },
     {
@@ -27,7 +27,7 @@
       "price": 12,
       "type": "burger",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     },
     {
@@ -37,7 +37,7 @@
       "price": 8,
       "type": "burger",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     },
     {
@@ -47,7 +47,7 @@
       "price": 5,
       "type": "pizza",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     },
     {
@@ -57,11 +57,88 @@
       "price": 8,
       "type": "pizza",
       "qte": 0,
-      "etat": false,
+      "etat": true,
       "usermail": "none"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": 1,
+      "name": "cheese burger",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
+      "price": "15",
+      "type": "burger",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user1": "user1",
+      "user1qte": 2
+    },
+    {
+      "id": 2,
+      "name": "Chiken burger",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/McD-Classic-Grilled-Chicken-Sand.jpg/1024px-McD-Classic-Grilled-Chicken-Sand.jpg",
+      "price": 11,
+      "type": "burger",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user2": "user2",
+      "user2qte": 4,
+      "user1": "user1",
+      "user1qte": 1
+    },
+    {
+      "id": 3,
+      "name": "Beef burger",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/NCI_Visuals_Food_Hamburger.jpg/1024px-NCI_Visuals_Food_Hamburger.jpg",
+      "price": 12,
+      "type": "burger",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user3": "user3",
+      "user3qte": 3
+    },
+    {
+      "id": 4,
+      "name": "Turkey Burgers ",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
+      "price": 8,
+      "type": "burger",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user3": "user3",
+      "user3qte": 1,
+      "user1": "user1",
+      "user1qte": 4
+    },
+    {
+      "id": 5,
+      "name": "Pizza Margherita",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+      "price": 5,
+      "type": "pizza",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user4": "user4",
+      "user4qte": 4
+    },
+    {
+      "id": 6,
+      "name": "Pizza Paperonni",
+      "picture": "https://media.gettyimages.com/photos/cheesy-pepperoni-pizza-picture-id938742222?s=2048x2048",
+      "price": 8,
+      "type": "pizza",
+      "qte": 0,
+      "etat": true,
+      "usermail": "none",
+      "user4": "user4",
+      "user4qte": 2
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -97,21 +174,16 @@
     }
   ],
   "layout": {
-    "layoutnumber": 1
+    "layoutnumber": 2
   },
   "curentsessions": [
     {
-      "data": [
-        {
-          "id": 3,
-          "acompte": "user3",
-          "firestname": "user3",
-          "lastname": "user3",
-          "mail": "user3@user.com",
-          "password": "topuser"
-        }
-      ],
-      "id": 1
+      "id": 1,
+      "acompte": "user1",
+      "firestname": "user1",
+      "lastname": "user1",
+      "mail": "user1@user.com",
+      "password": "topuser"
     }
   ]
 }

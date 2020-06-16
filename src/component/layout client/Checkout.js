@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getOrderAPi } from "../../api/api";
+import { getOrderAPi,getUsersessionAPi } from "../../api/api";
 import Modalcheckout from "./Modalcheckout";
 class Checkout extends Component {
 
     componentDidMount(){
         this.props.getOrder();
-       
+        this.props.getusersession();
         
        
         
@@ -16,8 +16,11 @@ class Checkout extends Component {
     }
     
   render() { 
-   
-    const arrPrice=this.props.getorders.map(el=>el.price*el.qte)
+    let a=this.props.usersession
+        let b=a.map(el=>el.acompte).join("")
+        
+    const arrPrice=this.props.getorders.filter(el=>el[b+"qte"]).map(el=>el.price*el[b+"qte"])
+    console.log(arrPrice)
         let s=0
          for(let i=0;i<arrPrice.length;i++){
           s=s+arrPrice[i]
@@ -40,12 +43,13 @@ class Checkout extends Component {
 const mapStateToProps = (state) => ({
     
     getorders:state.getorders,
-    
+    usersession:state.usersession,
     
   });
   const mapDispatchToProps = (dispatch) => ({
    
     getOrder: (orderuser) => dispatch(getOrderAPi(orderuser)),
+    getusersession:()=>dispatch(getUsersessionAPi()),
     
     
   });

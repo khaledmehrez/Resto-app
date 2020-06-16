@@ -4,6 +4,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import {chooseLayoutApi,getUserAPi,addSessionToApi} from "../../api/api"
 class SignIn extends Component{
+  
   componentDidMount(){
     this.props.getuser()
   }
@@ -19,7 +20,8 @@ class SignIn extends Component{
     }
     else if(this.props.getusers.filter(el=>el.mail===this.state.mail).length!==0 && this.props.getusers.filter(el=>el.password===this.state.password).length!==0){
       let arruser=this.props.getusers.filter(el=>el.mail===this.state.mail)
-      this.props.addsession(arruser)
+      
+      this.props.addsession(arruser[0])
       this.props.choose(2)
       window.location.reload()
     }

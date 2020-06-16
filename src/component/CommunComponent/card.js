@@ -4,15 +4,39 @@ import {
   addOrderAPi,
   deletefoodAPi,
   EDitOrderQte,
-  ShowAndHideApi,editnameApi,editpriceApi
+  ShowAndHideApi,editnameApi,editpriceApi,getOrderAPi
 } from "../../api/api";
 import { getorder } from "../../action";
 import { Link } from "react-router-dom";
 
 class CardFoodList extends Component {
-  state = { togle: this.props.food.etat, editprice: false,price:"",editname:false,name:"",namefromApi:this.props.food.name,pricefromApi:this.props.food.price };
+  state = { togle: false, editprice: false,price:"",editname:false,name:"",namefromApi:this.props.food.name,pricefromApi:this.props.food.price };
+  // componentDidMount(){
+  //   this.props.getdataorder();
+  //   let a=this.props.usersession
+  //       let b=a.map(el=>el.acompte).join("")
+  //       const obj=[{ picture:this.props.food.picture,
+  //         type:this.props.food.type,
+  //         name:this.props.food.name,
+  //         price:this.props.food.price,
+  //         qte:this.props.food.qte+1,
+  //         id:this.props.food.id,
+  //         user:b}]
+  //       if(this.props.getorders.includes(obj)){
+  //         this.setState({togle:true})
+  //       }
+  // }
   AddToOrder = (i) => {
-    this.props.addOrder(this.props.food);
+    let a=this.props.usersession
+       let b= a.map(el=>el.acompte).join("")
+    //     const obj=[{ picture:this.props.food.picture,
+    //      type:this.props.food.type,
+    //      name:this.props.food.name,
+    //      price:this.props.food.price,
+    //      qte:this.props.food.qte+1,
+         
+    //      user:b}]
+    this.props.addOrder(b,i);
   };
   EditfoodList = (i) => {
     console.log(i);
@@ -57,7 +81,10 @@ class CardFoodList extends Component {
 
   render() {
     const { food, getorder,usersession } = this.props;
-    console.log(this.props.loadLayout)
+    
+       let b= usersession.map(el=>el.acompte).join("")
+    //console.log(this.props.getorder.hasOwnProperty("burger"))
+    
     return (
       <div>
         <div class="ui card">
@@ -129,7 +156,7 @@ class CardFoodList extends Component {
             </div>
           </div>
           <div class="extra content">
-            {this.props.loadLayout === 2 && this.state.togle === false ? (
+            {this.props.loadLayout === 2 && this.state.togle===false  ? (
               <button
                 class="ui green basic button"
                 onClick={() => {
@@ -139,21 +166,12 @@ class CardFoodList extends Component {
               >
                 add to cart
               </button>
-            ) : null}
-            {this.props.loadLayout === 2 && this.state.togle === true ? (
-              <Link to="/order" class="ui green basic button">
-                <i aria-hidden="true" class="cart icon"></i>
-                go to cart
-              </Link>
-            ) : null}
-            {this.props.loadLayout === 1 ? (
-              <button
-                class="ui green basic button"
-                onClick={() => this.EditfoodList(food.id)}
-              >
-                edit
-              </button>
-            ) : null}
+            ) : (<Link to="/order" class="ui green basic button">
+            <i aria-hidden="true" class="cart icon"></i>
+            go to cart
+          </Link>)}
+           
+            
             {this.props.loadLayout === 3 ? (
               <button
                 class="ui red basic button"
@@ -168,13 +186,14 @@ class CardFoodList extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({ getorders: state.getorders,});
 const mapDispatchToProps = (dispatch) => ({
-  addOrder: (order) => dispatch(addOrderAPi(order)),
+  addOrder: (order,ordersession) => dispatch(addOrderAPi(order,ordersession)),
   deletefood: (foodTOdelete) => dispatch(deletefoodAPi(foodTOdelete)),
   editqte: () => dispatch(EDitOrderQte()),
   ShowandHide: (i, data) => dispatch(ShowAndHideApi(i, data)),
   editName:(i,data)=> dispatch(editnameApi(i,data)),
   editPrice:(i,data)=>dispatch(editpriceApi(i,data)),
+  getdataorder:()=> dispatch(getOrderAPi()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(CardFoodList);

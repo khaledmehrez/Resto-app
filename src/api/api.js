@@ -7,16 +7,11 @@ export function getDataForfoodAPi(){
     axios.get('http://localhost:4000/foods').then((res)=>dispatch(getDataForfood(res.data)));
   }
   //post the order to api
-  export function addOrderAPi(order){
-    const p=order.picture
-    const t=order.type
-    const n=order.name
-    const price=order.price
-    const qte=order.qte+1
-    const id=order.id
-    
+  export function addOrderAPi(order,index){
+    const userqte=order+"qte"
+    const userattribue=order
     return(dispatch)=>
-    axios.post('http://localhost:4000/orders',{picture:p,type:t,name:n,price,qte,id}).then((res)=>(console.log(res.data)))
+    axios.patch(`http://localhost:4000/orders/${index}`,{[userattribue]:order,[userqte]:1}).then((res)=>(console.log(res.data)))
   }
   //fetch order from api
   export function getOrderAPi(){
@@ -33,18 +28,20 @@ export function EDitOrderQte(OrderQteToEdit){
 //delete order
 
 
-export function deleteOrderAPi(orderTOdelete){
-  
+export function deleteOrderAPi(orderTOdelete,key){
+  const dv=[key].join("")
+  const empty=""
   return(dispatch)=>
-  axios.delete(`http://localhost:4000/orders/${orderTOdelete}`).then((res)=>(console.log(res.data)))
+  axios.patch(`http://localhost:4000/orders/${orderTOdelete}`,{[dv]:empty}).then((res)=>(console.log(res.data)))
 }
 
 
 //remove item qte
-export function removeItemQteApi(i,data){
-  
+export function removeItemQteApi(i,data,dynamicvariable){
+  const dv=[dynamicvariable+"qte"].join("")
+  console.log(dv)
   return(dispatch)=>
-  axios.patch(`http://localhost:4000/orders/${i}`,{qte:data}).then((res)=>(console.log(res.data)))
+  axios.patch(`http://localhost:4000/orders/${i}`,{[dv]:data}).then((res)=>(console.log(res.data)))
 }
 //add itemqte
 export function addItemQteApi(i,data){
@@ -109,12 +106,12 @@ export function getlayoutAPi(){
     export function addSessionToApi(data){
   
       return(dispatch)=>
-      axios.put(`http://localhost:4000/curentsessions/1`,{data}).then((res)=>(console.log(res.data)))
+      axios.put('http://localhost:4000/curentsessions/1',data).then((res)=>(console.log(res.data)))
     }
     //get user session
     export function getUsersessionAPi(){
       return(dispatch)=>
-      axios.get(`http://localhost:4000/curentsessions/1`).then((res)=>dispatch(getusersession(res.data)));
+      axios.get(`http://localhost:4000/curentsessions`).then((res)=>dispatch(getusersession(res.data)));
       }
     
  
