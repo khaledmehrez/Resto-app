@@ -1,23 +1,13 @@
 {
   "foods": [
     {
-      "id": 1,
-      "name": "Cheese burger",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Burger_King_Quad_Stacker_cheeseburger.jpg/800px-Burger_King_Quad_Stacker_cheeseburger.jpg",
-      "price": "15",
-      "type": "burger",
-      "qte": 0,
-      "etat": true,
-      "usermail": "none"
-    },
-    {
       "id": 2,
       "name": "Chiken burger",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/McD-Classic-Grilled-Chicken-Sand.jpg/1024px-McD-Classic-Grilled-Chicken-Sand.jpg",
       "price": 11,
       "type": "burger",
       "qte": 0,
-      "etat": true,
+      "etat": false,
       "usermail": "none"
     },
     {
@@ -37,7 +27,7 @@
       "price": 8,
       "type": "burger",
       "qte": 0,
-      "etat": true,
+      "etat": false,
       "usermail": "none"
     },
     {
@@ -57,7 +47,7 @@
       "price": 8,
       "type": "pizza",
       "qte": 0,
-      "etat": true,
+      "etat": false,
       "usermail": "none"
     }
   ],
@@ -72,7 +62,9 @@
       "etat": true,
       "usermail": "none",
       "user1": "user1",
-      "user1qte": 1
+      "user1qte": 1,
+      "user4": "user4",
+      "user4qte": 1
     },
     {
       "id": 2,
@@ -83,10 +75,12 @@
       "qte": 0,
       "etat": true,
       "usermail": "none",
-      "user2": "user2",
+      "user2": "",
       "user2qte": 4,
       "user1": "user1",
-      "user1qte": 1
+      "user1qte": 2,
+      "user4": "",
+      "user4qte": 1
     },
     {
       "id": 3,
@@ -98,7 +92,11 @@
       "etat": true,
       "usermail": "none",
       "user3": "user3",
-      "user3qte": 3
+      "user3qte": 3,
+      "user1": "",
+      "user1qte": 1,
+      "user2": "user2",
+      "user2qte": 1
     },
     {
       "id": 4,
@@ -111,7 +109,7 @@
       "usermail": "none",
       "user3": "user3",
       "user3qte": 1,
-      "user1": "user1",
+      "user1": "",
       "user1qte": 4
     },
     {
@@ -125,8 +123,10 @@
       "usermail": "none",
       "user4": "user4",
       "user4qte": 4,
-      "user1": "user1",
-      "user1qte": 1
+      "user1": "",
+      "user1qte": 3,
+      "user3": "user3",
+      "user3qte": 1
     },
     {
       "id": 6,
@@ -137,9 +137,9 @@
       "qte": 0,
       "etat": true,
       "usermail": "none",
-      "user4": "user4",
+      "user4": "",
       "user4qte": 2,
-      "user1": "user1",
+      "user1": "",
       "user1qte": 1
     }
   ],
@@ -183,10 +183,10 @@
   "curentsessions": [
     {
       "id": 1,
-      "acompte": "user2",
-      "firestname": "user2",
-      "lastname": "user2",
-      "mail": "user2@user.com",
+      "acompte": "user4",
+      "firestname": "user4",
+      "lastname": "user4",
+      "mail": "user4@user.com",
       "password": "topuser"
     }
   ]

@@ -166,10 +166,12 @@ class CardFoodList extends Component {
               >
                 add to cart
               </button>
-            ) : (<Link to="/order" class="ui green basic button">
+            ) :null}
+              {this.props.loadLayout === 2 && this.state.togle===true  ?
+              (<Link to="/order" class="ui green basic button">
             <i aria-hidden="true" class="cart icon"></i>
             go to cart
-          </Link>)}
+          </Link>):null}
            
             
             {this.props.loadLayout === 3 ? (

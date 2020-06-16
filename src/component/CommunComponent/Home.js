@@ -27,7 +27,7 @@ class Home extends Component {
     return (
       <div>
         <div className="cover-home">
-          <h1 class="cover-title-home ">Lorem Ipsum</h1>
+          <h1 class="cover-title-home "></h1>
         </div>
 
         <div className=" first-section-home ">
